@@ -17,17 +17,18 @@ head(data_split)
 
 tempo_split <- as.factor(data_split$Data)
 trattamento_split <- as.factor(data_split$Trattamento)
+pianta_split <- as.factor(data_split$Pianta)
 posizione_split <- as.factor(data_split$Posizione)
 popolazione_split <- as.numeric(data_split$Popolazione)
 
 
 # GLM:
 # Factors are the sampling date, treatment and position.
-# Negative binomial as GLM distribution - It requires "MASS" package
+# Negative binomial as GLM distribution - It requires "lme4" package
 
-library(MASS)
+library(lme4)
 
-GenLin_split <- glm.nb(popolazione_split ~ trattamento_split + posizione_split, data=data_split)
+GenLin_split <- glmer.nb(popolazione_split ~ trattamento_split + posizione_split + (1 | pianta_split), data=data_split)
 summary(GenLin_split)
 
 # Pairwise comparison:
