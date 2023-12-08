@@ -1,5 +1,5 @@
 # Toumpa-dataset
-Dataset and R scripts to reproduce the data analysis of the paper by Di Sora et al. 2021.
+Dataset and R scripts to reproduce the data analysis of the paper by Di Sora et al. 2022.
 
 If you use the dataset or the script hereby reported, please cite the following paper:
 
